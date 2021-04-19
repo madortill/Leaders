@@ -75,19 +75,13 @@ $(function() {
 
 // preload of media
 function loadingMedia() {
-  let graphics = new Image();
   let sound = new Audio();
   for (let i = 1; i <= NUM_OF_LEADERS; i++) {
-    graphics.src = "assets/media/cloud-right/cloud_" + i + ".svg";
-    graphics.src = "assets/media/explosion-wrong/explosion_" + i + ".svg";
-    graphics.src = "assets/media/info-answer/info_" + i + ".svg";
-    graphics.src = "assets/media/info-answer/info_selected_" + i + ".svg";
-    graphics.src = "assets/media/leader-answer/leader_" + i + ".svg";
-    graphics.src = "assets/media/leader-answer/leader_selected_" + i + ".svg";
-    graphics.src = "assets/media/marker/marker_" + i + ".svg";
-    graphics.src = "assets/media/vial/info_vial_" + i + ".svg";
-    graphics.src = "assets/media/vial/leader_vial_" + i + ".svg";
-    graphics.src = generalImages[i - 1];
+    for (let j = 1; j <= src.length; j++) {
+      let graphics = new Image();
+      graphics.src = src[j-1] + i + ".svg";
+    }
+    // graphics.src = generalImages[i - 1];
   }
   for (let i = 1; i <= loadAudio.length; i++) {
     sound.src = loadAudio[i - 1];
