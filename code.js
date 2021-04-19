@@ -73,6 +73,7 @@ $(function() {
   loadingMedia();
 });
 //test
+// test2 
 // preload of media
 function loadingMedia() {
   let sound = new Audio();
