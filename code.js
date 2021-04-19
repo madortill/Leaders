@@ -65,6 +65,7 @@ const arrLeaders = [{
 var selectedcomponent = null;
 var selectedleader = null;
 var ending = 0;
+var src = ["assets/media/cloud-right/cloud_","assets/media/explosion-wrong/explosion_", "assets/media/leader-answer/leader_", "assets/media/leader-answer/leader_selected_", "assets/media/info-answer/info_", "assets/media/info-answer/info_selected_","assets/media/marker/marker_"];
 var audio = new Audio("assets/media/audio/cut/start.mp3");
 var generalImages = ["assets/media/vial/vial_right.svg", "assets/media/vial/vial_wrong.svg", "assets/media/vial/vial.svg", "assets/media/general/about.svg", "assets/media/general/back_arrow.svg", "assets/media/general/cabinet_left.svg", "assets/media/general/cabinet_right.svg", "assets/media/general/notebook-button.svg", "assets/media/general/notebook.svg", "assets/media/general/scientist-start.svg", "assets/media/general/scientist-end.svg", "assets/media/general/SpeechBubble.svg", "assets/media/general/desk.svg", "assets/media/general/shelf.svg", "assets/media/general/play.svg"];
 var loadAudio = ["assets/media/audio/cut/start.mp3", "assets/media/audio/cut/end.mp3", "assets/media/audio/cut/right_1.mp3", "assets/media/audio/cut/right_2.mp3", "assets/media/audio/cut/right_3.mp3", "assets/media/audio/cut/wrong_1.mp3", "assets/media/audio/cut/wrong_2.mp3", "assets/media/audio/cut/wrong_3.mp3", ]
@@ -72,8 +73,7 @@ var loadAudio = ["assets/media/audio/cut/start.mp3", "assets/media/audio/cut/end
 $(function() {
   loadingMedia();
 });
-//test
-// test2 
+
 // preload of media
 function loadingMedia() {
   let sound = new Audio();
