@@ -72,7 +72,7 @@ var loadAudio = ["assets/media/audio/cut/start.mp3", "assets/media/audio/cut/end
 $(function() {
   loadingMedia();
 });
-
+//test
 // preload of media
 function loadingMedia() {
   let sound = new Audio();
