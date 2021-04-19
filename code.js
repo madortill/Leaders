@@ -1,6 +1,7 @@
 const NUM_OF_LEADERS = 15;
 // reaction function
 const NUM_OF_EXPLOSION_STAGES = 6;
+
 const arrLeaders = [{
     "name": "מארי קירי",
     "act": "דמות מדענית פורצת גבולות, חלוצה בחקר הקרינה הרדיואקטיבית."
@@ -66,6 +67,7 @@ var selectedcomponent = null;
 var selectedleader = null;
 var ending = 0;
 var audio = new Audio("assets/media/audio/cut/start.mp3");
+var src = ["assets/media/cloud-right/cloud_", "assets/media/explosion-wrong/explosion_", "assets/media/info-answer/info_","assets/media/info-answer/info_selected_","assets/media/leader-answer/leader_","assets/media/leader-answer/leader_selected_", "assets/media/marker/marker_", "assets/media/vial/info_vial_","assets/media/vial/leader_vial_"]
 var generalImages = ["assets/media/vial/vial_right.svg", "assets/media/vial/vial_wrong.svg", "assets/media/vial/vial.svg", "assets/media/general/about.svg", "assets/media/general/back_arrow.svg", "assets/media/general/cabinet_left.svg", "assets/media/general/cabinet_right.svg", "assets/media/general/notebook-button.svg", "assets/media/general/notebook.svg", "assets/media/general/scientist-start.svg", "assets/media/general/scientist-end.svg", "assets/media/general/SpeechBubble.svg", "assets/media/general/desk.svg", "assets/media/general/shelf.svg", "assets/media/general/play.svg"];
 var loadAudio = ["assets/media/audio/cut/start.mp3", "assets/media/audio/cut/end.mp3", "assets/media/audio/cut/right_1.mp3", "assets/media/audio/cut/right_2.mp3", "assets/media/audio/cut/right_3.mp3", "assets/media/audio/cut/wrong_1.mp3", "assets/media/audio/cut/wrong_2.mp3", "assets/media/audio/cut/wrong_3.mp3", ]
 
@@ -75,19 +77,13 @@ $(function() {
 
 // preload of media
 function loadingMedia() {
-  let graphics = new Image();
   let sound = new Audio();
   for (let i = 1; i <= NUM_OF_LEADERS; i++) {
-    graphics.src = "assets/media/cloud-right/cloud_" + i + ".svg";
-    graphics.src = "assets/media/explosion-wrong/explosion_" + i + ".svg";
-    graphics.src = "assets/media/info-answer/info_" + i + ".svg";
-    graphics.src = "assets/media/info-answer/info_selected_" + i + ".svg";
-    graphics.src = "assets/media/leader-answer/leader_" + i + ".svg";
-    graphics.src = "assets/media/leader-answer/leader_selected_" + i + ".svg";
-    graphics.src = "assets/media/marker/marker_" + i + ".svg";
-    graphics.src = "assets/media/vial/info_vial_" + i + ".svg";
-    graphics.src = "assets/media/vial/leader_vial_" + i + ".svg";
-    graphics.src = generalImages[i - 1];
+    for (let j = 1; j <= src.length; j++) {
+      let graphics = new Image();
+      graphics.src = src[j-1] + i + ".svg";
+    }
+    // graphics.src = generalImages[i - 1];
   }
   for (let i = 1; i <= loadAudio.length; i++) {
     sound.src = loadAudio[i - 1];
