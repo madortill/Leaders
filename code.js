@@ -2,7 +2,7 @@ const NUM_OF_LEADERS = 15;
 // reaction function
 const NUM_OF_EXPLOSION_STAGES = 6;
 const arrLeaders = [{
-    "name": "מארי קירי",
+    "name": "מארי קירי",.
     "act": "דמות מדענית פורצת גבולות, חלוצה בחקר הקרינה הרדיואקטיבית."
   },
   {
