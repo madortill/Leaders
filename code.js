@@ -79,12 +79,12 @@ $(function() {
 });
 
 function loadingMedia(url) {
-  new Promise((resolve, reject) => {
-    let  graphics = new Image();
-    graphics.addEventListener("load", () => resolve(graphics));
+  let promise = new Promise((resolve, reject) => {
+    let graphics = new Image();
+    graphics.addEventListener("load", () => resolve(url));
     graphics.addEventListener("error", (err) => reject(err));
-    graphics.src = url;
   });
+  graphics.src = await promise;
 }
 
 // const loadingMedia = (url) => new Promise((resolve, reject) => {
