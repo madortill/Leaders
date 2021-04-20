@@ -80,11 +80,15 @@ $(function() {
 
 async function loadingMedia(url) {
   let graphics = new Image();
-  let promise = new Promise((resolve, reject) => {
-    graphics.addEventListener("load", () => resolve(url));
-    graphics.addEventListener("error", (err) => reject(err));
-  });
-  graphics.src = await promise;
+  return new Promise(function(resolve, reject){
+    graphics.onload= function(){
+      resolve(url)
+    }
+    graphics.onerror= function(){
+      reject(url)
+    }
+    graphics.src = url;
+  })
 }
 
 // const loadingMedia = (url) => new Promise((resolve, reject) => {
