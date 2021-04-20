@@ -76,6 +76,7 @@ $(function() {
       loadingMedia(src[j-1] + i + ".svg");
     }
   }
+  init();
 });
 
 async function loadingMedia(url) {
