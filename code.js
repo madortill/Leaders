@@ -79,8 +79,8 @@ $(function() {
 });
 const loadingMedia = (url) => new Promise((resolve, reject) => {
 const  graphics = new Image();
-graphics.on("load", () => resolve(graphics));
-graphics.on("error", (err) => reject(err));
+graphics.addEventListener("load", () => resolve(graphics));
+graphics.addEventListener("error", (err) => reject(err));
 graphics.src = url;
 });
 // preload of media
