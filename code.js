@@ -72,14 +72,13 @@ var loadAudio = ["assets/media/audio/cut/start.mp3", "assets/media/audio/cut/end
 
 $(function() {
   for (let i = 1; i <= NUM_OF_LEADERS; i++) {
-    let j = 1;
-    while(j <= src.length) {
-      loadingMedia(src[j-1] + i + ".svg").then(function(){
-        j++;
-        console.log("success");
-      }).catch(function(){
-        console.log("error");
-      });
+    // let j = 1;
+    // while (j <= src.length) {
+    //   loadingMedia(src[j-1] + i + ".svg");
+    //   j++
+    // }
+    for (let j = 1; j <= src.length; j++) {
+      loadingMedia(src[j-1] + i + ".svg");
     }
   }
   init();
@@ -88,13 +87,13 @@ $(function() {
 async function loadingMedia(url) {
   let graphics = new Image();
   return new Promise(function(resolve, reject){
+    graphics.src = url;
     graphics.onload= function(){
       resolve(url)
     }
     graphics.onerror= function(){
       reject(url)
     }
-    graphics.src = url;
   })
 }
 
