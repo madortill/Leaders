@@ -202,7 +202,7 @@ z-index: -999;
 }
 
 #drawer-container {
-  height: 58vh;
+  height: 50vh;
   background-color: rgb(158, 158, 158);
 }
 
@@ -211,6 +211,7 @@ z-index: -999;
   overflow-y: scroll;
   flex-direction: column;
   top: -15.7vw;
+  background-color: rgb(158, 158, 158);
 }
 
 .acts {
