@@ -71,12 +71,12 @@ var generalImages = ["assets/media/vial/vial_right.svg", "assets/media/vial/vial
 var loadAudio = ["assets/media/audio/cut/start.mp3", "assets/media/audio/cut/end.mp3", "assets/media/audio/cut/right_1.mp3", "assets/media/audio/cut/right_2.mp3", "assets/media/audio/cut/right_3.mp3", "assets/media/audio/cut/wrong_1.mp3", "assets/media/audio/cut/wrong_2.mp3", "assets/media/audio/cut/wrong_3.mp3"];
 
 $(function() {
-  for (let i = 1; i <= NUM_OF_LEADERS; i++) {
-    for (let j = 1; j <= src.length; j++) {
-      // loadingMedia(src[j-1] + i + ".svg");
-      $("#preload").append("<img src='"+src[j-1] + i + ".svg'>");
-    }
-  }
+  // for (let i = 1; i <= NUM_OF_LEADERS; i++) {
+  //   for (let j = 1; j <= src.length; j++) {
+  //     // loadingMedia(src[j-1] + i + ".svg");
+  //     $("#preload").append("<img src='"+src[j-1] + i + ".svg'>");
+  //   }
+  // }
   init();
 });
 
