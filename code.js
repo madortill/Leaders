@@ -79,8 +79,8 @@ $(function() {
 });
 
 async function loadingMedia(url) {
+  let graphics = new Image();
   let promise = new Promise((resolve, reject) => {
-    let graphics = new Image();
     graphics.addEventListener("load", () => resolve(url));
     graphics.addEventListener("error", (err) => reject(err));
   });
