@@ -95,13 +95,13 @@ function init() {
   for (let i = 0; i < NUM_OF_LEADERS; i++) {
     // names
     // the graphics is the background of the div
-    $("#names-flexbox").append(`<img id="leader-${i+1}" data-num=${i+1} class="leaders" src="assets/media/leader-answer/leader_${i+1}.svg">`);
+    $("#names-flexbox").append(`<img id="leader-${i+1}" data-num=${i+1} class="leaders" src="assets/media/leader-answer/leader_${i+1}.svg" loading="eager">`);
     // $(`#name-${i+1}`).attr("src", `assets/media/leaders/leader_${i+1}.svg`);
     // acts
     // adding internal text div to the HTML div
     $(`#act-${i+1}`).append(`<div class="act-text">${arrLeaders[i].act}</div>`);
     //adding components graphics
-    $(`#act-${i+1}`).append(`<img id="component-${i+1}" data-num=${i+1} class="components" src="assets/media/info-answer/info_${i+1}.svg">`);
+    $(`#act-${i+1}`).append(`<img id="component-${i+1}" data-num=${i+1} class="components" src="assets/media/info-answer/info_${i+1}.svg" loading="eager">`);
   }
   // event listeners
   // start
