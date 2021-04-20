@@ -487,7 +487,7 @@ body,
   left: 50vw; */
   align-self: flex-end;
   top: -9.3vw;
-  left: 3vw;
+  left: -14vw;
   position: relative;
 }
 
@@ -497,7 +497,7 @@ body,
 }
 
 #drawer-container {
-  height: 48vh;
+  height: 45vh;
   background-color: rgb(158, 158, 158);
 }
 
