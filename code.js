@@ -80,7 +80,7 @@ $(function() {
 
 function loadingMedia(url) {
   new Promise((resolve, reject) => {
-    const  graphics = new Image();
+    let  graphics = new Image();
     graphics.addEventListener("load", () => resolve(graphics));
     graphics.addEventListener("error", (err) => reject(err));
     graphics.src = url;
