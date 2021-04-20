@@ -72,8 +72,14 @@ var loadAudio = ["assets/media/audio/cut/start.mp3", "assets/media/audio/cut/end
 
 $(function() {
   for (let i = 1; i <= NUM_OF_LEADERS; i++) {
-    for (let j = 1; j <= src.length; j++) {
-      loadingMedia(src[j-1] + i + ".svg");
+    let j = 1;
+    while(j <= src.length) {
+      loadingMedia(src[j-1] + i + ".svg").then(function(){
+        j++;
+        console.log("success");
+      }).catch(function(){
+        console.log("error");
+      });
     }
   }
   init();
