@@ -71,37 +71,46 @@ var generalImages = ["assets/media/vial/vial_right.svg", "assets/media/vial/vial
 var loadAudio = ["assets/media/audio/cut/start.mp3", "assets/media/audio/cut/end.mp3", "assets/media/audio/cut/right_1.mp3", "assets/media/audio/cut/right_2.mp3", "assets/media/audio/cut/right_3.mp3", "assets/media/audio/cut/wrong_1.mp3", "assets/media/audio/cut/wrong_2.mp3", "assets/media/audio/cut/wrong_3.mp3", ]
 
 $(function() {
-  loadingMedia();
-});
-
-// preload of media
-function loadingMedia() {
-  let sound = new Audio();
   for (let i = 1; i <= NUM_OF_LEADERS; i++) {
-    for (let j = 1; j <= src.length; j++) {
-      let graphics = new Image();
-      graphics.src = src[j-1] + i + ".svg";
-    }
-    // graphics.src = generalImages[i - 1];
-  }
-  for (let i = 1; i <= loadAudio.length; i++) {
-    sound.src = loadAudio[i - 1];
-  }
-  init();
-}
+        for (let j = 1; j <= src.length; j++) {
+          loadingMedia(src[j-1] + i + ".svg");
+        }
+      }
+});
+const loadingMedia = (url) => new Promise((resolve, reject) => {
+const  graphics = new Image();
+graphics.on("load", () => resolve(graphics));
+graphics.on("error", (err) => reject(err));
+graphics.src = url;
+});
+// preload of media
+// function loadingMedia() {
+//   let sound = new Audio();
+//   for (let i = 1; i <= NUM_OF_LEADERS; i++) {
+//     for (let j = 1; j <= src.length; j++) {
+//       let graphics = new Image();
+//       graphics.src = src[j-1] + i + ".svg";
+//     }
+//     // graphics.src = generalImages[i - 1];
+//   }
+//   for (let i = 1; i <= loadAudio.length; i++) {
+//     sound.src = loadAudio[i - 1];
+//   }
+//   init();
+// }
 
 function init() {
   // loading names and acts
   for (let i = 0; i < NUM_OF_LEADERS; i++) {
     // names
     // the graphics is the background of the div
-    $("#names-flexbox").append(`<img id="leader-${i+1}" data-num=${i+1} class="leaders" src="assets/media/leader-answer/leader_${i+1}.svg" loading="eager">`);
+    $("#names-flexbox").append(`<img id="leader-${i+1}" data-num=${i+1} class="leaders" src="assets/media/leader-answer/leader_${i+1}.svg">`);
     // $(`#name-${i+1}`).attr("src", `assets/media/leaders/leader_${i+1}.svg`);
     // acts
     // adding internal text div to the HTML div
     $(`#act-${i+1}`).append(`<div class="act-text">${arrLeaders[i].act}</div>`);
     //adding components graphics
-    $(`#act-${i+1}`).append(`<img id="component-${i+1}" data-num=${i+1} class="components" src="assets/media/info-answer/info_${i+1}.svg" loading="eager">`);
+    $(`#act-${i+1}`).append(`<img id="component-${i+1}" data-num=${i+1} class="components" src="assets/media/info-answer/info_${i+1}.svg">`);
   }
   // event listeners
   // start
