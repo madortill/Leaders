@@ -541,20 +541,46 @@ $(function() {
 //   }
 //   init();
 // }
+var fs = require('fs');
+
+function readFiles(dirname, onFileContent, onError) {
+  fs.readdir(dirname, function(err, filenames) {
+    if (err) {
+      onError(err);
+      return;
+    }
+    filenames.forEach(function(filename) {
+      fs.readFile(dirname + filename, 'utf-8', function(err, content) {
+        if (err) {
+          onError(err);
+          return;
+        }
+        onFileContent(filename, content);
+      });
+    });
+  });
+}
 
 function init() {
   var folder = "assets/media/vial/";
-  $.ajax({
-    url : folder,
-    success: function (data) {
-        $(data).find("a").attr("href", function (i, val) {
-            if( val.match(/\.(jpe?g|png|svg)$/) ) { 
-                $("body").append( "<img src='"+ folder + val +"'>" );
-                console.log(val)
-            } 
-        });
-    }
-});
+//   $.ajax({
+//     url : folder,
+//     success: function (data) {
+//         $(data).find("a").attr("href", function (i, val) {
+//             if( val.match(/\.(jpe?g|png|svg)$/) ) { 
+//                 $("body").append( "<img src='"+ folder + val +"'>" );
+//                 console.log(val)
+//             } 
+//         });
+//     }
+// });
+  var data = {};
+  readFiles(folder, function(filename, content) {
+    data[filename] = content;
+  }, function(err) {
+    throw err;
+  });
+  console.log(data)
   // loading names and acts
   for (let i = 0; i < NUM_OF_LEADERS; i++) {
     // names
