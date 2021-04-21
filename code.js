@@ -493,16 +493,23 @@ var src = ["assets/media/leader-answer/leader_", "assets/media/leader-answer/lea
 var audio = new Audio("assets/media/audio/cut/start.mp3");
 var generalImages = ["assets/media/vial/vial_right.svg", "assets/media/vial/vial_wrong.svg", "assets/media/vial/vial.svg", "assets/media/general/about.svg", "assets/media/general/back_arrow.svg", "assets/media/general/cabinet_left.svg", "assets/media/general/cabinet_right.svg", "assets/media/general/notebook-button.svg", "assets/media/general/notebook.svg", "assets/media/general/scientist-start.svg", "assets/media/general/scientist-end.svg", "assets/media/general/SpeechBubble.svg", "assets/media/general/desk.svg", "assets/media/general/shelf.svg", "assets/media/general/play.svg"];
 var loadAudio = ["assets/media/audio/cut/start.mp3", "assets/media/audio/cut/end.mp3", "assets/media/audio/cut/right_1.mp3", "assets/media/audio/cut/right_2.mp3", "assets/media/audio/cut/right_3.mp3", "assets/media/audio/cut/wrong_1.mp3", "assets/media/audio/cut/wrong_2.mp3", "assets/media/audio/cut/wrong_3.mp3"];
+var queue = new createjs.loadQueue(true);
+
 
 $(function() {
-  for (let i = 1; i <= NUM_OF_LEADERS; i++) {
-    for (let j = 1; j <= src.length; j++) {
+  queue.on("fileload", function(){
+    if (j=75) {
+      init();
+    }
+  });
+  for (var i = 1; i <= NUM_OF_LEADERS; i++) {
+    for (var j = 1; j <= src.length; j++) {
       // loadingMedia(src[j-1] + i + ".svg");
-      $("#preload").append("<img rel='preload' src='"+src[j-1] + i + ".svg'>");
-      console.log(src[j-1] + i + ".svg,");
+      queue.loadFile(src[j-1] + i + ".svg");
+      // $("#preload").append("<img rel='preload' src='"+src[j-1] + i + ".svg'>");
+      // console.log(src[j-1] + i + ".svg,");
     }
   }
-  init();
 });
 
 // async function loadingMedia(url) {
@@ -575,7 +582,83 @@ function init() {
 //         });
 //     }
 // });
-  var data = {};
+  var data = {
+    img1: "assets/media/leader-answer/leader_1.svg",
+    img2:"assets/media/marker/marker_15.svg",
+    img3: "assets/media/leader-answer/leader_selected_1.svg",
+    img4:"assets/media/info-answer/info_1.svg",
+    img5:"assets/media/info-answer/info_selected_1.svg",
+    img6:"assets/media/marker/marker_1.svg",
+    img7:"assets/media/leader-answer/leader_2.svg",
+    img8:"assets/media/leader-answer/leader_selected_2.svg",
+    img9:"assets/media/info-answer/info_2.svg",
+    img10:"assets/media/info-answer/info_selected_2.svg",
+    img11:"assets/media/marker/marker_2.svg",
+    img12:"assets/media/leader-answer/leader_3.svg",
+    img13:"assets/media/leader-answer/leader_selected_3.svg",
+    img14:"assets/media/info-answer/info_3.svg",
+    img15:"assets/media/info-answer/info_selected_3.svg",
+    img16:"assets/media/marker/marker_3.svg",
+    img17:"assets/media/leader-answer/leader_4.svg",
+    img18:"assets/media/leader-answer/leader_selected_4.svg",
+    img19:"assets/media/info-answer/info_4.svg",
+    img20:"assets/media/info-answer/info_selected_4.svg",
+    img21:"assets/media/marker/marker_4.svg",
+    img22:"assets/media/leader-answer/leader_5.svg",
+    img23:"assets/media/leader-answer/leader_selected_5.svg",
+    img24:"assets/media/info-answer/info_5.svg",
+    img25:"assets/media/info-answer/info_selected_5.svg",
+    img26:"assets/media/marker/marker_5.svg",
+    img27:"assets/media/leader-answer/leader_6.svg",
+    img28:"assets/media/leader-answer/leader_selected_6.svg",
+    img29:"assets/media/info-answer/info_6.svg",
+    img30:"assets/media/info-answer/info_selected_6.svg",
+    img31:"assets/media/marker/marker_6.svg",
+    img32:"assets/media/leader-answer/leader_7.svg",
+    img33:"assets/media/leader-answer/leader_selected_7.svg",
+    img34:"assets/media/info-answer/info_7.svg",
+    img35:"assets/media/info-answer/info_selected_7.svg",
+    img36:"assets/media/marker/marker_7.svg",
+    img37:"assets/media/leader-answer/leader_8.svg",
+    img38:"assets/media/leader-answer/leader_selected_8.svg",
+    img39:"assets/media/info-answer/info_8.svg",
+    img40:"assets/media/info-answer/info_selected_8.svg",
+    img41:"assets/media/marker/marker_8.svg",
+    img42:"assets/media/leader-answer/leader_9.svg",
+    img43:"assets/media/leader-answer/leader_selected_9.svg",
+    img44:"assets/media/info-answer/info_9.svg",
+    img45:"assets/media/info-answer/info_selected_9.svg",
+    img46:"assets/media/marker/marker_9.svg",
+    img47:"assets/media/leader-answer/leader_10.svg",
+    img48:"assets/media/leader-answer/leader_selected_10.svg",
+    img49:"assets/media/info-answer/info_10.svg",
+    img50:"assets/media/info-answer/info_selected_10.svg",
+    img51:"assets/media/marker/marker_10.svg",
+    img52:"assets/media/leader-answer/leader_11.svg",
+    img53:"assets/media/leader-answer/leader_selected_11.svg",
+    img54:"assets/media/info-answer/info_11.svg",
+    img55:"assets/media/info-answer/info_selected_11.svg",
+    img56:"assets/media/marker/marker_11.svg",
+    img57:"assets/media/leader-answer/leader_12.svg",
+    img58:"assets/media/leader-answer/leader_selected_12.svg",
+    img59:"assets/media/info-answer/info_12.svg",
+    img60:"assets/media/info-answer/info_selected_12.svg",
+    img61:"assets/media/marker/marker_12.svg",
+    img62:"assets/media/leader-answer/leader_13.svg",
+    img63:"assets/media/leader-answer/leader_selected_13.svg",
+    img64:"assets/media/info-answer/info_13.svg",
+    img65:"assets/media/info-answer/info_selected_13.svg",
+    img66:"assets/media/marker/marker_13.svg",
+    img67:"assets/media/leader-answer/leader_14.svg",
+    img68:"assets/media/leader-answer/leader_selected_14.svg",
+    img69:"assets/media/info-answer/info_14.svg",
+    img70:"assets/media/info-answer/info_selected_14.svg",
+    img71:"assets/media/marker/marker_14.svg",
+    img72:"assets/media/leader-answer/leader_15.svg",
+    img73:"assets/media/leader-answer/leader_selected_15.svg",
+    img74:"assets/media/info-answer/info_15.svg",
+    img75:"assets/media/info-answer/info_selected_15.svg"
+};
   // readFiles(folder, function(filename, content) {
   //   data[filename] = content;
   //   console.log(content)
