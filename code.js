@@ -484,7 +484,7 @@ const arrLeaders = [{
     "act": "דמות פעילת ציבור, אשת חינוך ועורכת ספרותית, שהקדישה את חייה ופועלה לרעיון הציוני ולעם היהודי"
   }
 ];
-const fs = require('fs');
+const fs = requirejs('fs');
 
 var selectedcomponent = null;
 var selectedleader = null;
