@@ -541,9 +541,9 @@ $(function() {
 //   }
 //   init();
 // }
-const fs = require('fs');
 
 function readFiles(dirname, onFileContent, onError) {
+  const fs = require('fs');
   fs.readdir(dirname, function(err, filenames) {
     if (err) {
       onError(err);
