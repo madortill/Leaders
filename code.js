@@ -767,8 +767,8 @@ function init() {
   $(".leaders").on("click", function() {
     selected($(this), "leader", "leader");
     for (var j = 1; j <= src.length; j++) {
-      console.log(src[j-1] + $(this) + ".svg");
-      queue.loadFile(src[j-1] + $(this) + ".svg");
+      console.log(src[j-1] + $(this).attr("id").slice(7) + ".svg");
+      queue.loadFile(src[j-1] + $(this).attr("id").slice(7) + ".svg");
     }
   });
   $("#notebook-button").on("click", function() {
