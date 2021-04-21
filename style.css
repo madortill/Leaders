@@ -16,7 +16,8 @@ body,
 
 #preload {
   position: absolute;
-  visibility: hidden;
+  /* visibility: hidden; */
+  display:none;
   z-index: -999;
 }
 
