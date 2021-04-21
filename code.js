@@ -484,7 +484,7 @@ const arrLeaders = [{
     "act": "דמות פעילת ציבור, אשת חינוך ועורכת ספרותית, שהקדישה את חייה ופועלה לרעיון הציוני ולעם היהודי"
   }
 ];
-const fs = requirejs('fs');
+// const fs = requirejs('fs');
 
 var selectedcomponent = null;
 var selectedleader = null;
@@ -543,23 +543,23 @@ $(function() {
 //   init();
 // }
 
-function readFiles(dirname, onFileContent, onError) {
-  fs.readdir(dirname, function(err, filenames) {
-    if (err) {
-      onError(err);
-      return;
-    }
-    filenames.forEach(function(filename) {
-      fs.readFile(dirname + filename, 'utf-8', function(err, content) {
-        if (err) {
-          onError(err);
-          return;
-        }
-        onFileContent(filename, content);
-      });
-    });
-  });
-}
+// function readFiles(dirname, onFileContent, onError) {
+//   fs.readdir(dirname, function(err, filenames) {
+//     if (err) {
+//       onError(err);
+//       return;
+//     }
+//     filenames.forEach(function(filename) {
+//       fs.readFile(dirname + filename, 'utf-8', function(err, content) {
+//         if (err) {
+//           onError(err);
+//           return;
+//         }
+//         onFileContent(filename, content);
+//       });
+//     });
+//   });
+// }
 
 function init() {
   var folder = "assets/media/vial/";
@@ -575,13 +575,62 @@ function init() {
 //     }
 // });
   var data = {};
-  readFiles(folder, function(filename, content) {
-    data[filename] = content;
-    console.log(content)
-  }, function(err) {
-    throw err;
-  });
+  // readFiles(folder, function(filename, content) {
+  //   data[filename] = content;
+  //   console.log(content)
+  // }, function(err) {
+  //   throw err;
+  // });
   console.log(data)
+
+  // 
+// 
+// assuming you've gotten the urls from somewhere and put them in a JS array
+// var urls = ['url_image_1.svg', 'url_image_2.svg', ... ];
+
+// var svgCache = {};
+
+// function loaded(){
+//   // just increment the counter if there are still images pending...
+//   if(counter++ >= total){
+//     // this function will be called when everything is loaded
+//     // e.g. you can set a flag to say "I've got all the images now"
+//     alldone();
+//   }
+// }
+
+// var counter = 0;
+// var total = urls.length;
+
+// // This will load the images in parallel:
+// // In most browsers you can have between 4 to 6 parallel requests
+// // IE7/8 can only do 2 requests in parallel per time
+// for( var i=0; i < total; i++){
+//   var img = new Image();
+//   // When done call the function "loaded"
+//   img.onload = loaded;
+//   // cache it
+//   svgCache[urls[i]] = img;
+//   img.src = urls[i];
+// }
+
+// function alldone(){
+//   // from this point on you can use the cache to serve the images
+//   ...
+//   // say you want to load only the first image
+//   showImage('url_image_1.svg', 'imageDivId');
+// }
+
+// // basically every time you want to load a different image just use this function
+// function showImage(url, id){
+//   // get the image referenced by the given url
+//   var cached = svgCache[url];
+//   // and append it to the element with the given id
+//   document.getElementById(id).appendChild(cached);
+// }
+
+// 
+  // 
   // loading names and acts
   for (let i = 0; i < NUM_OF_LEADERS; i++) {
     // names
