@@ -543,6 +543,18 @@ $(function() {
 // }
 
 function init() {
+  var folder = "assets/media/vial/";
+  $.ajax({
+    url : folder,
+    success: function (data) {
+        $(data).find("a").attr("href", function (i, val) {
+            if( val.match(/\.(jpe?g|png|svg)$/) ) { 
+                $("body").append( "<img src='"+ folder + val +"'>" );
+                console.log(val)
+            } 
+        });
+    }
+});
   // loading names and acts
   for (let i = 0; i < NUM_OF_LEADERS; i++) {
     // names
