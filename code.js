@@ -484,6 +484,7 @@ const arrLeaders = [{
     "act": "דמות פעילת ציבור, אשת חינוך ועורכת ספרותית, שהקדישה את חייה ופועלה לרעיון הציוני ולעם היהודי"
   }
 ];
+const fs = require('fs');
 
 var selectedcomponent = null;
 var selectedleader = null;
@@ -543,7 +544,6 @@ $(function() {
 // }
 
 function readFiles(dirname, onFileContent, onError) {
-  const fs = require('fs');
   fs.readdir(dirname, function(err, filenames) {
     if (err) {
       onError(err);
