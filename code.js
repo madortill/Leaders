@@ -497,13 +497,14 @@ var queue = new createjs.LoadQueue(true);
 
 
 $(function() {
+  var j = 1
   queue.on("fileload", function(){
     if (j=75) {
       init();
     }
   });
   for (var i = 1; i <= NUM_OF_LEADERS; i++) {
-    for (var j = 1; j <= src.length; j++) {
+    for (j = 1; j <= src.length; j++) {
       // loadingMedia(src[j-1] + i + ".svg");
       queue.loadFile(src[j-1] + i + ".svg");
       // $("#preload").append("<img rel='preload' src='"+src[j-1] + i + ".svg'>");
