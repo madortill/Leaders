@@ -577,6 +577,7 @@ function init() {
   var data = {};
   readFiles(folder, function(filename, content) {
     data[filename] = content;
+    console.log(content)
   }, function(err) {
     throw err;
   });
