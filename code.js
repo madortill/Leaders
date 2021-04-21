@@ -499,7 +499,7 @@ var queue = new createjs.LoadQueue(true);
 $(function() {
 
   queue.on("fileload", function(){
-    if ((i===NUM_OF_LEADERS) && (j === src.length)) {
+    if ((i > NUM_OF_LEADERS) && (j > src.length)) {
       init();
     }
   });
