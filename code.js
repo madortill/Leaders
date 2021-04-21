@@ -499,7 +499,7 @@ $(function() {
     for (let j = 1; j <= src.length; j++) {
       // loadingMedia(src[j-1] + i + ".svg");
       $("#preload").append("<img rel='preload' src='"+src[j-1] + i + ".svg'>");
-      console.log(src[j-1] + i + ".svg");
+      console.log(src[j-1] + i + ".svg,");
     }
   }
   init();
