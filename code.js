@@ -760,12 +760,14 @@ function init() {
   $(".acts").on("click", function() {
     selected($("#component-" + $(this).attr("id").slice(4)), "info", "component");
     for (var j = 1; j <= src.length; j++) {
+      console.log(src[j-1] + $(this).attr("id").slice(4) + ".svg");
       queue.loadFile(src[j-1] + $(this).attr("id").slice(4) + ".svg");
     }
   });
   $(".leaders").on("click", function() {
     selected($(this), "leader", "leader");
     for (var j = 1; j <= src.length; j++) {
+      console.log(src[j-1] + $(this) + ".svg");
       queue.loadFile(src[j-1] + $(this) + ".svg");
     }
   });
