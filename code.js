@@ -499,7 +499,7 @@ var queue = new createjs.LoadQueue(true);
 $(function() {
   var j = 1
   queue.on("fileload", function(){
-    if (j=75) {
+    if (j===75) {
       init();
     }
   });
