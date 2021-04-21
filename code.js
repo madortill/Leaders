@@ -498,25 +498,25 @@ var arrManifest = [];
 
 
 $(function() {
-  queue.on("complete", function(){
+  // queue.on("complete", function(){
       init();
-  });
-
-  // queue.on("fileload", function(){
-  //   if ((i > NUM_OF_LEADERS) && (j > src.length)) {
-  //     init();
-  //   }
   // });
-  for (var i = 1; i <= NUM_OF_LEADERS; i++) {
-    for (var j = 1; j <= src.length; j++) {
-      // loadingMedia(src[j-1] + i + ".svg");
-      arrManifest.push(src[j-1] + i + ".svg");
-      // queue.loadFile(src[j-1] + i + ".svg");
-      // $("#preload").append("<img rel='preload' src='"+src[j-1] + i + ".svg'>");
-      // console.log(src[j-1] + i + ".svg,");
-    }
-  }
-  queue.loadManifest(arrManifest);
+
+  // // queue.on("fileload", function(){
+  // //   if ((i > NUM_OF_LEADERS) && (j > src.length)) {
+  // //     init();
+  // //   }
+  // // });
+  // for (var i = 1; i <= NUM_OF_LEADERS; i++) {
+  //   for (var j = 1; j <= src.length; j++) {
+  //     // loadingMedia(src[j-1] + i + ".svg");
+  //     arrManifest.push(src[j-1] + i + ".svg");
+  //     // queue.loadFile(src[j-1] + i + ".svg");
+  //     // $("#preload").append("<img rel='preload' src='"+src[j-1] + i + ".svg'>");
+  //     // console.log(src[j-1] + i + ".svg,");
+  //   }
+  // }
+  // queue.loadManifest(arrManifest);
 
 });
 
@@ -759,9 +759,15 @@ function init() {
   // game
   $(".acts").on("click", function() {
     selected($("#component-" + $(this).attr("id").slice(4)), "info", "component");
+    for (var j = 1; j <= src.length; j++) {
+      queue.loadFile(src[j-1] + $(this).attr("id").slice(4) + ".svg");
+    }
   });
   $(".leaders").on("click", function() {
     selected($(this), "leader", "leader");
+    for (var j = 1; j <= src.length; j++) {
+      queue.loadFile(src[j-1] + $(this) + ".svg");
+    }
   });
   $("#notebook-button").on("click", function() {
     $("#notebook-container").css("display", "flex");
