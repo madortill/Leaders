@@ -499,9 +499,14 @@ var arrManifest = [];
 
 
 $(function() {
+  if ('serviceWorker' in navigator && location.hostname !== 'localhost' && location.hostname !== "127.0.0.1") {
+    let location = ""
+    navigator.serviceWorker.register(location + 'sw.js');
+  }
   queueAudio.on("complete", function(){
       init();
   });
+  
 
   // // queue.on("fileload", function(){
   // //   if ((i > NUM_OF_LEADERS) && (j > src.length)) {
@@ -518,6 +523,8 @@ $(function() {
   //   }
   // }
   queueAudio.loadManifest(loadAudio);
+  // ספריית אופליין, מאפשרת פתיחה של הדף ללא אינטרנט וללא מחיקה של הקאש כל פעם מחדש
+
 
 });
 
