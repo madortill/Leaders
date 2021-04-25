@@ -522,9 +522,7 @@ $(function() {
   // }
   queueAudio.loadManifest(loadAudio);
   queueAudio.on("complete", function(){
-    $("#notebook-container").animate({
-      bottom: "142vw"
-    }, 300);
+
   });
   // ספריית אופליין, מאפשרת פתיחה של הדף ללא אינטרנט וללא מחיקה של הקאש כל פעם מחדש
 
