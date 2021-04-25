@@ -504,29 +504,33 @@ $(function() {
     navigator.serviceWorker.register(location + 'sw.js');
   }
 
-  init();
+
 
   // // queue.on("fileload", function(){
   // //   if ((i > NUM_OF_LEADERS) && (j > src.length)) {
   // //     init();
   // //   }
   // // });
-  // for (var i = 1; i <= NUM_OF_LEADERS; i++) {
-  //   for (var j = 1; j <= src.length; j++) {
-  //     // loadingMedia(src[j-1] + i + ".svg");
-  //     arrManifest.push(src[j-1] + i + ".svg");
-  //     // queue.loadFile(src[j-1] + i + ".svg");
-  //     // $("#preload").append("<img rel='preload' src='"+src[j-1] + i + ".svg'>");
-  //     // console.log(src[j-1] + i + ".svg,");
-  //   }
-  // }
+  for (var i = 1; i <= NUM_OF_LEADERS; i++) {
+    for (var j = 1; j <= src.length; j++) {
+      // loadingMedia(src[j-1] + i + ".svg");
+      arrManifest.push(src[j-1] + i + ".svg");
+      // queue.loadFile(src[j-1] + i + ".svg");
+      // $("#preload").append("<img rel='preload' src='"+src[j-1] + i + ".svg'>");
+      // console.log(src[j-1] + i + ".svg,");
+    }
+  }
+  queue.loadManifest(arrManifest);
   queueAudio.loadManifest(loadAudio);
+  queue.on("complete", function(){
+console.log("gah");
+  });
   queueAudio.on("complete", function(){
-
+    console.log("tal");
   });
   // ספריית אופליין, מאפשרת פתיחה של הדף ללא אינטרנט וללא מחיקה של הקאש כל פעם מחדש
 
-
+  init();
 });
 
 // async function loadingMedia(url) {
