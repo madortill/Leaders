@@ -504,9 +504,9 @@ $(function() {
     navigator.serviceWorker.register(location + 'sw.js');
   }
   queueAudio.on("complete", function(){
-      init();
+      
   });
-  
+  init();
 
   // // queue.on("fileload", function(){
   // //   if ((i > NUM_OF_LEADERS) && (j > src.length)) {
