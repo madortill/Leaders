@@ -496,6 +496,7 @@ var loadAudio = ["assets/media/audio/cut/start.mp3", "assets/media/audio/cut/end
 var queue = new createjs.LoadQueue(true);
 var queueAudio = new createjs.LoadQueue(true);
 var arrManifest = [];
+let mediaCache = 'userSettings';
 
 
 $(function() {
@@ -522,6 +523,11 @@ $(function() {
   }
   queue.loadManifest(arrManifest);
   queueAudio.loadManifest(loadAudio);
+  caches.open(mediaCache).then(cache => {
+    cache.addAll(arrManifest).then(()=>{
+      console.log("data cached")
+    });
+    });
   queue.on("complete", function(){
 console.log("gah");
   });
