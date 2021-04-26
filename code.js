@@ -534,6 +534,7 @@ $(function() {
 //   queueAudio.on("complete", function(){
 //     console.log("tal");
 //   });
+//
   // ספריית אופליין, מאפשרת פתיחה של הדף ללא אינטרנט וללא מחיקה של הקאש כל פעם מחדש
 
   init();
