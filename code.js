@@ -493,8 +493,8 @@ var src = ["assets/media/vial/info_vial_", "assets/media/leader-answer/leader_se
 var audio = new Audio("assets/media/audio/cut/start.mp3");
 var generalImages = ["assets/media/vial/vial_right.svg", "assets/media/vial/vial_wrong.svg", "assets/media/vial/vial.svg", "assets/media/general/about.svg", "assets/media/general/back_arrow.svg", "assets/media/general/cabinet_left.svg", "assets/media/general/cabinet_right.svg", "assets/media/general/notebook-button.svg", "assets/media/general/notebook.svg", "assets/media/general/scientist-start.svg", "assets/media/general/scientist-end.svg", "assets/media/general/SpeechBubble.svg", "assets/media/general/desk.svg", "assets/media/general/shelf.svg", "assets/media/general/play.svg"];
 var loadAudio = ["assets/media/audio/cut/start.mp3", "assets/media/audio/cut/end.mp3", "assets/media/audio/cut/right_1.mp3", "assets/media/audio/cut/right_2.mp3", "assets/media/audio/cut/right_3.mp3", "assets/media/audio/cut/wrong_1.mp3", "assets/media/audio/cut/wrong_2.mp3", "assets/media/audio/cut/wrong_3.mp3"];
-var queue = new createjs.LoadQueue(true);
-var queueAudio = new createjs.LoadQueue(true);
+// var queue = new createjs.LoadQueue(true);
+// var queueAudio = new createjs.LoadQueue(true);
 var arrManifest = [];
 let mediaCache = 'userSettings';
 
@@ -598,7 +598,7 @@ $(function() {
 // }
 
 function init() {
-  var folder = "assets/media/vial/";
+  // var folder = "assets/media/vial/";
 //   $.ajax({
 //     url : folder,
 //     success: function (data) {
@@ -610,90 +610,90 @@ function init() {
 //         });
 //     }
 // });
-  var data = {
-    img1: "assets/media/leader-answer/leader_1.svg",
-    img2:"assets/media/marker/marker_15.svg",
-    img3: "assets/media/leader-answer/leader_selected_1.svg",
-    img4:"assets/media/info-answer/info_1.svg",
-    img5:"assets/media/info-answer/info_selected_1.svg",
-    img6:"assets/media/marker/marker_1.svg",
-    img7:"assets/media/leader-answer/leader_2.svg",
-    img8:"assets/media/leader-answer/leader_selected_2.svg",
-    img9:"assets/media/info-answer/info_2.svg",
-    img10:"assets/media/info-answer/info_selected_2.svg",
-    img11:"assets/media/marker/marker_2.svg",
-    img12:"assets/media/leader-answer/leader_3.svg",
-    img13:"assets/media/leader-answer/leader_selected_3.svg",
-    img14:"assets/media/info-answer/info_3.svg",
-    img15:"assets/media/info-answer/info_selected_3.svg",
-    img16:"assets/media/marker/marker_3.svg",
-    img17:"assets/media/leader-answer/leader_4.svg",
-    img18:"assets/media/leader-answer/leader_selected_4.svg",
-    img19:"assets/media/info-answer/info_4.svg",
-    img20:"assets/media/info-answer/info_selected_4.svg",
-    img21:"assets/media/marker/marker_4.svg",
-    img22:"assets/media/leader-answer/leader_5.svg",
-    img23:"assets/media/leader-answer/leader_selected_5.svg",
-    img24:"assets/media/info-answer/info_5.svg",
-    img25:"assets/media/info-answer/info_selected_5.svg",
-    img26:"assets/media/marker/marker_5.svg",
-    img27:"assets/media/leader-answer/leader_6.svg",
-    img28:"assets/media/leader-answer/leader_selected_6.svg",
-    img29:"assets/media/info-answer/info_6.svg",
-    img30:"assets/media/info-answer/info_selected_6.svg",
-    img31:"assets/media/marker/marker_6.svg",
-    img32:"assets/media/leader-answer/leader_7.svg",
-    img33:"assets/media/leader-answer/leader_selected_7.svg",
-    img34:"assets/media/info-answer/info_7.svg",
-    img35:"assets/media/info-answer/info_selected_7.svg",
-    img36:"assets/media/marker/marker_7.svg",
-    img37:"assets/media/leader-answer/leader_8.svg",
-    img38:"assets/media/leader-answer/leader_selected_8.svg",
-    img39:"assets/media/info-answer/info_8.svg",
-    img40:"assets/media/info-answer/info_selected_8.svg",
-    img41:"assets/media/marker/marker_8.svg",
-    img42:"assets/media/leader-answer/leader_9.svg",
-    img43:"assets/media/leader-answer/leader_selected_9.svg",
-    img44:"assets/media/info-answer/info_9.svg",
-    img45:"assets/media/info-answer/info_selected_9.svg",
-    img46:"assets/media/marker/marker_9.svg",
-    img47:"assets/media/leader-answer/leader_10.svg",
-    img48:"assets/media/leader-answer/leader_selected_10.svg",
-    img49:"assets/media/info-answer/info_10.svg",
-    img50:"assets/media/info-answer/info_selected_10.svg",
-    img51:"assets/media/marker/marker_10.svg",
-    img52:"assets/media/leader-answer/leader_11.svg",
-    img53:"assets/media/leader-answer/leader_selected_11.svg",
-    img54:"assets/media/info-answer/info_11.svg",
-    img55:"assets/media/info-answer/info_selected_11.svg",
-    img56:"assets/media/marker/marker_11.svg",
-    img57:"assets/media/leader-answer/leader_12.svg",
-    img58:"assets/media/leader-answer/leader_selected_12.svg",
-    img59:"assets/media/info-answer/info_12.svg",
-    img60:"assets/media/info-answer/info_selected_12.svg",
-    img61:"assets/media/marker/marker_12.svg",
-    img62:"assets/media/leader-answer/leader_13.svg",
-    img63:"assets/media/leader-answer/leader_selected_13.svg",
-    img64:"assets/media/info-answer/info_13.svg",
-    img65:"assets/media/info-answer/info_selected_13.svg",
-    img66:"assets/media/marker/marker_13.svg",
-    img67:"assets/media/leader-answer/leader_14.svg",
-    img68:"assets/media/leader-answer/leader_selected_14.svg",
-    img69:"assets/media/info-answer/info_14.svg",
-    img70:"assets/media/info-answer/info_selected_14.svg",
-    img71:"assets/media/marker/marker_14.svg",
-    img72:"assets/media/leader-answer/leader_15.svg",
-    img73:"assets/media/leader-answer/leader_selected_15.svg",
-    img74:"assets/media/info-answer/info_15.svg",
-    img75:"assets/media/info-answer/info_selected_15.svg"
-};
+//   var data = {
+//     img1: "assets/media/leader-answer/leader_1.svg",
+//     img2:"assets/media/marker/marker_15.svg",
+//     img3: "assets/media/leader-answer/leader_selected_1.svg",
+//     img4:"assets/media/info-answer/info_1.svg",
+//     img5:"assets/media/info-answer/info_selected_1.svg",
+//     img6:"assets/media/marker/marker_1.svg",
+//     img7:"assets/media/leader-answer/leader_2.svg",
+//     img8:"assets/media/leader-answer/leader_selected_2.svg",
+//     img9:"assets/media/info-answer/info_2.svg",
+//     img10:"assets/media/info-answer/info_selected_2.svg",
+//     img11:"assets/media/marker/marker_2.svg",
+//     img12:"assets/media/leader-answer/leader_3.svg",
+//     img13:"assets/media/leader-answer/leader_selected_3.svg",
+//     img14:"assets/media/info-answer/info_3.svg",
+//     img15:"assets/media/info-answer/info_selected_3.svg",
+//     img16:"assets/media/marker/marker_3.svg",
+//     img17:"assets/media/leader-answer/leader_4.svg",
+//     img18:"assets/media/leader-answer/leader_selected_4.svg",
+//     img19:"assets/media/info-answer/info_4.svg",
+//     img20:"assets/media/info-answer/info_selected_4.svg",
+//     img21:"assets/media/marker/marker_4.svg",
+//     img22:"assets/media/leader-answer/leader_5.svg",
+//     img23:"assets/media/leader-answer/leader_selected_5.svg",
+//     img24:"assets/media/info-answer/info_5.svg",
+//     img25:"assets/media/info-answer/info_selected_5.svg",
+//     img26:"assets/media/marker/marker_5.svg",
+//     img27:"assets/media/leader-answer/leader_6.svg",
+//     img28:"assets/media/leader-answer/leader_selected_6.svg",
+//     img29:"assets/media/info-answer/info_6.svg",
+//     img30:"assets/media/info-answer/info_selected_6.svg",
+//     img31:"assets/media/marker/marker_6.svg",
+//     img32:"assets/media/leader-answer/leader_7.svg",
+//     img33:"assets/media/leader-answer/leader_selected_7.svg",
+//     img34:"assets/media/info-answer/info_7.svg",
+//     img35:"assets/media/info-answer/info_selected_7.svg",
+//     img36:"assets/media/marker/marker_7.svg",
+//     img37:"assets/media/leader-answer/leader_8.svg",
+//     img38:"assets/media/leader-answer/leader_selected_8.svg",
+//     img39:"assets/media/info-answer/info_8.svg",
+//     img40:"assets/media/info-answer/info_selected_8.svg",
+//     img41:"assets/media/marker/marker_8.svg",
+//     img42:"assets/media/leader-answer/leader_9.svg",
+//     img43:"assets/media/leader-answer/leader_selected_9.svg",
+//     img44:"assets/media/info-answer/info_9.svg",
+//     img45:"assets/media/info-answer/info_selected_9.svg",
+//     img46:"assets/media/marker/marker_9.svg",
+//     img47:"assets/media/leader-answer/leader_10.svg",
+//     img48:"assets/media/leader-answer/leader_selected_10.svg",
+//     img49:"assets/media/info-answer/info_10.svg",
+//     img50:"assets/media/info-answer/info_selected_10.svg",
+//     img51:"assets/media/marker/marker_10.svg",
+//     img52:"assets/media/leader-answer/leader_11.svg",
+//     img53:"assets/media/leader-answer/leader_selected_11.svg",
+//     img54:"assets/media/info-answer/info_11.svg",
+//     img55:"assets/media/info-answer/info_selected_11.svg",
+//     img56:"assets/media/marker/marker_11.svg",
+//     img57:"assets/media/leader-answer/leader_12.svg",
+//     img58:"assets/media/leader-answer/leader_selected_12.svg",
+//     img59:"assets/media/info-answer/info_12.svg",
+//     img60:"assets/media/info-answer/info_selected_12.svg",
+//     img61:"assets/media/marker/marker_12.svg",
+//     img62:"assets/media/leader-answer/leader_13.svg",
+//     img63:"assets/media/leader-answer/leader_selected_13.svg",
+//     img64:"assets/media/info-answer/info_13.svg",
+//     img65:"assets/media/info-answer/info_selected_13.svg",
+//     img66:"assets/media/marker/marker_13.svg",
+//     img67:"assets/media/leader-answer/leader_14.svg",
+//     img68:"assets/media/leader-answer/leader_selected_14.svg",
+//     img69:"assets/media/info-answer/info_14.svg",
+//     img70:"assets/media/info-answer/info_selected_14.svg",
+//     img71:"assets/media/marker/marker_14.svg",
+//     img72:"assets/media/leader-answer/leader_15.svg",
+//     img73:"assets/media/leader-answer/leader_selected_15.svg",
+//     img74:"assets/media/info-answer/info_15.svg",
+//     img75:"assets/media/info-answer/info_selected_15.svg"
+// };
   // readFiles(folder, function(filename, content) {
   //   data[filename] = content;
   //   console.log(content)
   // }, function(err) {
   //   throw err;
   // });
-  console.log(data)
+  // console.log(data)
 
   // 
 // 
@@ -781,14 +781,14 @@ function init() {
     selected($("#component-" + $(this).attr("id").slice(4)), "info", "component");
     for (var j = 1; j <= src.length; j++) {
       console.log(src[j-1] + $(this).attr("id").slice(4) + ".svg");
-      queue.loadFile(src[j-1] + $(this).attr("id").slice(4) + ".svg");
+      // queue.loadFile(src[j-1] + $(this).attr("id").slice(4) + ".svg");
     }
   });
   $(".leaders").on("click", function() {
     selected($(this), "leader", "leader");
     for (var j = 1; j <= src.length; j++) {
       console.log(src[j-1] + $(this).attr("id").slice(7) + ".svg");
-      queue.loadFile(src[j-1] + $(this).attr("id").slice(7) + ".svg");
+      // queue.loadFile(src[j-1] + $(this).attr("id").slice(7) + ".svg");
     }
   });
   $("#notebook-button").on("click", function() {
@@ -904,12 +904,18 @@ function selected(clickedItem, imgName, itemType) {
     // the item is selected
     clickedItem.attr("src", "assets/media/" + imgName + "-answer/" + imgName + "_selected_" + window[`selected${itemType}`] + ".svg");
     // if the vial is empty, it is switched to new picture with the new item
-    if (($("#vial").css("background-image").includes("assets/media/vial/vial.svg"))) {
-      $("#vial").css("background-image", "url(assets/media/vial/" + imgName + "_vial_" + window[`selected${itemType}`] + ".svg)");
+    if ($("#vial").hasClass("block")) {
+      $("#vial").addClass("none");
+      $("#vial").removeClass("block");
+      $("#"+itemType+"-vial-"+clickedItem.attr("data-num")).removeClass("none");
+      $("#"+itemType+"-vial-"+clickedItem.attr("data-num")).addClass("block");
     }
     // if the vial is including another item's picture, it is switched to new picture with the new item
-    else if ($("#vial").css("background-image").includes(imgName)) {
-      $("#vial").css("background-image", "url(assets/media/vial/" + imgName + "_vial_" + window[`selected${itemType}`] + ".svg)");
+    else if ($(".block").attr("src").includes(imgName)) {
+      $(".block").addClass("none");
+      $(".block").removeClass("block");
+      $("#"+itemType+"-vial-"+clickedItem.attr("data-num")).removeClass("none");
+      $("#"+itemType+"-vial-"+clickedItem.attr("data-num")).addClass("block");
     } else {
       if (selectedcomponent === selectedleader) {
         reaction("right");
@@ -923,7 +929,10 @@ function selected(clickedItem, imgName, itemType) {
   else {
     clickedItem.attr("src", "assets/media/" + imgName + "-answer/" + imgName + "_" + window[`selected${itemType}`] + ".svg");
     window[`selected${itemType}`] = null;
-    $("#vial").css("background-image", "url(assets/media/vial/vial.svg)");
+    $("#vial").addClass("block");
+    $("#vial").removeClass("none");
+    $("#"+itemType+"-vial-"+clickedItem.attr("data-num")).removeClass("block");
+    $("#"+itemType+"-vial-"+clickedItem.attr("data-num")).addClass("none");
   }
 }
 
@@ -981,7 +990,11 @@ function reaction(reactionKind) {
   }
   // changing vial liquid
   setTimeout(function() {
-    $("#vial").css("background-image", "url(assets/media/vial/vial_" + reactionKind + ".svg)");
+    $(".block").addClass("none");
+    $(".block").removeClass("block");
+    $("#vial-" + reactionKind).removeClass("none");
+    $("#vial-" + reactionKind).addClass("block");
+
   }, 500);
 
   // removing event listeners
@@ -1001,6 +1014,8 @@ function reaction(reactionKind) {
         $("#play-button").on("click", function() {
           window.location.href = "https://youtube.com/shorts/w93f45UhEpg?feature=share";
         });
+
+        
         setTimeout(function() {
           toggleBlackOpacityDiv();
           $("#opening-ending-container").css("display", "block");
@@ -1032,13 +1047,15 @@ function reaction(reactionKind) {
       // removing item's glow
       $("#component-" + selectedcomponent).attr("src", "assets/media/info-answer/info_" + selectedcomponent + ".svg");
       $("#leader-" + selectedleader).attr("src", "assets/media/leader-answer/leader_" + selectedleader + ".svg");
-
     }
 
     selectedcomponent = null;
     selectedleader = null;
     // clearing vial
-    $("#vial").css("background-image", "url(assets/media/vial/vial.svg)");
+    $("#vial-" + reactionKind).removeClass("block");
+    $("#vial-" + reactionKind).addClass("none");
+    $("#vial").addClass("block");
+    $("#vial").removeClass("none");
     // adding again event listeners
     $(".acts").on("click", function() {
       selected($("#component-" + $(this).attr("id").slice(4)), "info", "component");
