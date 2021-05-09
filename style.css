@@ -159,26 +159,16 @@ body,
   z-index: 1;
 }
 
-#vial-container {
+#vial {
   height: 36vh;
   top: -16vw;
   position: relative;
   left: -17vw;
+  background-image: url("assets/media/vial/vial.svg");
+  background-size: 100% 100%;
   display: flex;
   justify-content: space-around;
   z-index: -4;
-}
-
-.vial {
-  height: 36vh;
-  top: 27vw;
-  position: fixed;
-  left: -8vw;
-  z-index: -5;
-}
-
-.none {
-  display: none;
 }
 
 .explosion {
